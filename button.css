@@ -1,0 +1,83 @@
+:root {
+    --button-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    padding-right: 10rem;
+    background-color: var(--clr-bg);
+}
+
+button {
+    font-family: "Balsamiq Sans", cursive;
+    padding: 1rem 1em;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--button-neon);
+    background-color: transparent;
+    border: 8px solid var(--button-neon);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: 0 0 20px var(--button-neon) inset;
+    position: relative;
+    cursor: pointer;
+    perspective: 200px;
+    font-weight: 700;
+    text-shadow: 0 0 0.15em hsl(0 0 100% / 0.3), 0 0 0.5em currentColor;
+    text-decoration: none;
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 50px var(--button-neon);
+    transition: 0.3s;
+}
+
+button:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 140%;
+    left: 0;
+    background-color: var(--button-neon);
+    transform: rotateX(90deg);
+    filter: blur(100px);
+    -webkit-filter: blur(100px);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-neon);
+    color: black;
+    text-shadow: none;
+}
+
+button:hover::after,
+button:hover::before {
+    box-shadow: 0 0 1.5em var(--button-neon);
+}
